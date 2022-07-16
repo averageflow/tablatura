@@ -12,3 +12,5 @@
 /comments CommentR POST
 
 /profile ProfileR GET
+
+/artists ArtistsR GET

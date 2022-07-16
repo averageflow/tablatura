@@ -120,6 +120,11 @@ instance Yesod App where
                     , menuItemRoute = ProfileR
                     , menuItemAccessCallback = isJust muser
                     }
+                , NavbarLeft $ MenuItem
+                    { menuItemLabel = "Artists"
+                    , menuItemRoute = ArtistsR
+                    , menuItemAccessCallback = True
+                    }
                 , NavbarRight $ MenuItem
                     { menuItemLabel = "Login"
                     , menuItemRoute = AuthR LoginR
@@ -163,6 +168,7 @@ instance Yesod App where
     isAuthorized (AuthR _) _ = return Authorized
     isAuthorized CommentR _ = return Authorized
     isAuthorized HomeR _ = return Authorized
+    isAuthorized ArtistsR _ = return Authorized
     isAuthorized FaviconR _ = return Authorized
     isAuthorized RobotsR _ = return Authorized
     isAuthorized (StaticR _) _ = return Authorized
