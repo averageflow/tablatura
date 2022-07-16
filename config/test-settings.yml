@@ -1,0 +1,4 @@
+database:
+  database: tablatura_test
+
+auth-dummy-login: true
