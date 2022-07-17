@@ -16,3 +16,19 @@ Comment json -- Adding "json" causes ToJSON and FromJSON instances to be derived
     userId UserId Maybe
     deriving Eq
     deriving Show
+Artist json
+    artistName Text
+    UniqueArtistName artistName
+    deriving Eq
+    deriving Show
+Song json
+    songName Text
+    UniqueSongName songName
+    deriving Eq
+    deriving Show
+Tablature json
+    tabArtist Artist
+    tabSong Song
+    tabVersion Text
+    deriving Eq
+    deriving Show
