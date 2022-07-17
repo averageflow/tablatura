@@ -16,35 +16,38 @@ $newline never
 
     ^{pageHead pc}
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel=stylesheet type=text/css href=@{StaticR css_normalize_css}>
+    <link rel=stylesheet type=text/css href=@{StaticR css_skeleton_css}>
+
     \<!--[if lt IE 9]>
-    \<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    $# \<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     \<![endif]-->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.3/js.cookie.min.js">
+    $# <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js">
+    $# <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.3/js.cookie.min.js">
 
-    \<!-- Bootstrap-3.3.7 compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    $# <script>
+    $#   /* The `defaultCsrfMiddleware` Middleware added in Foundation.hs adds a CSRF token to the request cookies. */
+    $#   /* AJAX requests should add that token to a header to be validated by the server. */
+    $#   /* See the CSRF documentation in the Yesod.Core.Handler module of the yesod-core package for details. */
+    $#   var csrfHeaderName = "#{TE.decodeUtf8 $ CI.foldedCase defaultCsrfHeaderName}";
 
-    <script>
-      /* The `defaultCsrfMiddleware` Middleware added in Foundation.hs adds a CSRF token to the request cookies. */
-      /* AJAX requests should add that token to a header to be validated by the server. */
-      /* See the CSRF documentation in the Yesod.Core.Handler module of the yesod-core package for details. */
-      var csrfHeaderName = "#{TE.decodeUtf8 $ CI.foldedCase defaultCsrfHeaderName}";
-
-      var csrfCookieName = "#{TE.decodeUtf8 defaultCsrfCookieName}";
-      var csrfToken = Cookies.get(csrfCookieName);
+    $#   var csrfCookieName = "#{TE.decodeUtf8 defaultCsrfCookieName}";
+    $#   var csrfToken = Cookies.get(csrfCookieName);
 
 
-      if (csrfToken) {
-      \  $.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
-      \      if (!options.crossDomain) {
-      \          jqXHR.setRequestHeader(csrfHeaderName, csrfToken);
-      \      }
-      \  });
-      }
+    $#   if (csrfToken) {
+    $#   \  $.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
+    $#   \      if (!options.crossDomain) {
+    $#   \          jqXHR.setRequestHeader(csrfHeaderName, csrfToken);
+    $#   \      }
+    $#   \  });
+    $#   }
 
-    <script>
-      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');
+    $# <script>
+    $#   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');
   <body>
     ^{pageBody pc}
 

@@ -1,20 +1,22 @@
-<div .masthead>
+<div>
     <div .container>
         <div .row>
-            <h1 .header>
-                Tab𝄞atura
-            <h2>
-                For all your music sheets
+            <div .twelve .column style="text-align: center">
+                <h1>
+                    Tab𝄞atura
+                <h2>
+                    For all your music sheets
             
 <div .container>
-    <!-- Starting ================================================== -->
-    <div .bs-docs-section>
-        <div .row>
-            <div .col-lg-12>
-                <div .page-header>
+    <div .row>
+        <div .twelve .column style="text-align: center">
+            <div style="letter-spacing: 1rem; font-size: 3rem; font-weight: bold;">
+                $maybe chosenLetter <- byLetter
+                    <p>#{chosenLetter}
+                $nothing
                     $if null artistLetters
                         <p>No artists.
                     $else
                         <div>
                             $forall letter <- artistLetters
-                                <span><a href=@?{(ArtistsR, [("by-letter", pack letter)])}>#{letter}
+                                <a style="text-decoration: none;" href=@?{(ArtistsR, [("by-letter", pack letter)])}>#{letter}

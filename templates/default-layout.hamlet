@@ -1,24 +1,23 @@
 
 <!-- Static navbar -->
-<nav .navbar.navbar-default.navbar-static-top>
-    <div .container>
-        <div .navbar-header>
-            <button type="button" .navbar-toggle.collapsed data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-
-        <div #navbar .collapse.navbar-collapse>
-            <ul .nav.navbar-nav>
+<nav .container>
+    <div .row>
+        <div .twelve .column>
+            <div>
                 $forall MenuItem label route _ <- navbarLeftFilteredMenuItems
-                    <li :Just route == mcurrentRoute:.active>
-                        <a href="@{route}">#{label}
+                    <span :Just route == mcurrentRoute:.active>
+                        <a style="font-size: 1.5rem; font-weight: bold; text-transform: capitalize; text-decoration: none;" href="@{route}">#{label}
 
-            <ul .nav.navbar-nav.navbar-right>
                 $forall MenuItem label route _ <- navbarRightFilteredMenuItems
-                    <li :Just route == mcurrentRoute:.active>
-                        <a href="@{route}">#{label}
+                    <span :Just route == mcurrentRoute:.active>
+                        <a style="font-size: 1.5rem; font-weight: bold; text-transform: capitalize; text-decoration: none;" href="@{route}">#{label}
+            $# <button type="button" .navbar-toggle.collapsed data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            $#     <span class="sr-only">Toggle navigation</span>
+            $#     <span class="icon-bar"></span>
+            $#     <span class="icon-bar"></span>
+            $#     <span class="icon-bar"></span>
+
+        
 
 <!-- Page Contents -->
 
